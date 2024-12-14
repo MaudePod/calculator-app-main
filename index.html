@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <section class="calculator-card">
+      <span class="calculator-card-header">
+        <span class="logo">
+          calc
+        </span>
+        <span>THEME</span>
+        <span class="theme">
+          <label for="theme-1">
+            <input type="radio" name="theme" id="theme-1" checked>
+          </label>
+          <label for="theme-2">
+            <input type="radio" name="theme" id="theme-2">
+          </label>
+          <label for="theme-3">
+            <input type="radio" name="theme" id="theme-3">
+          </label>
+
+        </span>
+      </span>
+      <section class="calc-output"></section>
+      <span class="calc-inputs">
+        <button class="7">7</button>
+        <button class="8">8</button>
+        <button class="9">9</button>
+        <button class="d">DEL</button>
+        <button class="4">4</button>
+        <button class="5">5</button>
+        <button class="6">6</button>
+        <button class="+">+</button>
+        <button class="1">1</button>
+        <button class="2">2</button>
+        <button class="3">3</button>
+        <button class="-">-</button>
+        <button class=".">.</button>
+        <button class="0">0</button>
+        <button class="/">/</button>
+        <button class="x">x</button>
+        <button class="r">RESET</button>
+        <button class="=">=</button>
+      </span>
+    </section>
+  </main>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/MaudePod">Maude Pod</a>.
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+:root {
+    /*Theme 1*/
+    --very-dark-desaturated-blue-main-background: hsl(222, 26%, 31%);
+    --very-dark-desaturated-toggle-background: hsl(223, 31%, 20%);
+    --very-dark-desaturated-blue-screen-background: hsl(224, 36%, 15%);
+    /*Keys*/
+    --desaturated-dark-blue-key-background: hsl(225, 21%, 49%);
+    --desaturated-dark-blue-key-shadow: hsl(224, 28%, 35%);
+    --red-key-background-toggle: hsl(6, 63%, 50%);
+    --dark-red-key-shadow: hsl(6, 70%, 34%);
+    --light-grayish-orange-key-background: hsl(30, 25%, 89%);
+    --grayish-orange-key-shadow: hsl(28, 16%, 65%);
+    /*Text*/
+    --very-dark-grayish-blue: hsl(221, 14%, 31%);
+    --white: hsl(0, 0, 100%);
+    /*Theme 2*/
+    --light-gray-main-background: hsl(0, 0%, 90%);
+    --grayish-red-toggle-background-keypad-background: hsl(0, 5%, 81%);
+    --very-light-gray-screen-background: hsl(0, 0%, 93%);
+    /*Theme 1 Keys */
+    --dark-moderate-cyan-key-background: hsl(185, 42%, 37%);
+    --very-dark-cyan-key-shadow: hsl(185, 58%, 25%);
+
+    --orange-key-background-toggle: hsl(25, 98%, 40%);
+    --dark-orange-key-shadow: hsl(25, 99%, 27%);
+
+    --light-grayish-yellow-key-background: hsl(45, 7%, 89%);
+    --dark-grayish-orange-key-shadow: hsl(35, 11%, 61%);
+
+    /*Text*/
+    --very-dark-grayish-yellow: hsl(60, 10%, 19%);
+
+    /*Theme 3*/
+    --very-dark-violet-main-background: hsl(268, 75%, 9%);
+    --very-dark-violet-toggle-background-keypad-screen: hsl(268, 71%, 12%);
+    /*Keys*/
+    --dark-violet-key-background: hsl(281, 89%, 26%);
+    --vivid-magenta-key-shadow: hsl(285, 91%, 52%);
+
+    --pure-cyan-key-background-toggle: hsl(176, 100%, 44%);
+    --soft-cyan-key-shadow: hsl(177, 92%, 70%);
+
+    --very-dark-violet-key-background: hsl(268, 47%, 21%);
+    --dark-magenta-key-shadow: hsl(290, 70%, 36%);
+    /*Text*/
+    --light-yellow: hsl(52, 100%, 62%);
+    --very-dark-blue: hsl(198, 20%, 13%);
+
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url(./fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+html {
+    color-scheme: dark light;
+}
+
+body {
+    min-height: 100svh;
+    width: 100svw;
+    container: body / inline-size;
+    margin: 0;
+    font-weight: 700;
+    font-family: 'League Spartan';
+}
+
+main {
+    min-height: 100cqh;
+    width: 100cqw;
+    display: grid;
+    place-items: center;
+    container: main / inline-size;
+}
+
+section[class="calculator-card"] {
+    display: grid;
+    row-gap: 20px;
+}
+
+section[class="calc-output"] {
+    height: 100px;
+    width: 100%;
+    display: grid;
+    place-content: end;
+    font-size: 5em;
+    padding: 5%;
+    border-radius: 10px;
+    align-content: center;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    font-size: 2em;
+    font-weight: 900;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 0;
+}
+
+button[class="r"] {
+    grid-column: 1 / 3;
+    width: unset;
+}
+
+button[class="="] {
+    grid-column: 3 / -1;
+    width: unset;
+}
+
+span[class="calc-inputs"] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+span[class="calculator-card-header"] {
+    display: grid;
+    padding: 5%;
+    width: 100%;
+    grid-template-columns: 1fr min-content min-content;
+    column-gap: 5px;
+}
+
+span[class="theme"] {
+    background: var(--very-dark-desaturated-toggle-background);
+    border-radius: 30px;
+    padding: 0 10px 0 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: min-content;
+}
+
+label[for="theme-1"],
+label[for="theme-2"],
+label[for="theme-3"] {
+    display: grid;
+    place-items: center;
+}
+
+label[for="theme-1"]:before {
+    content: "1";
+}
+
+label[for="theme-2"]:before {
+    content: "2";
+}
+
+label[for="theme-3"]:before {
+    content: "3";
+}
+
+label[for="theme-1"]:before,
+label[for="theme-2"]:before,
+label[for="theme-3"]:before {
+    position: absolute;
+    top: -20px;
+}
+
+input[name="theme"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+}
+
+body:has(input[id="theme-1"]:checked) {
+    main {
+        background: var(--very-dark-desaturated-blue-main-background);
+    }
+
+    section[class="calc-output"] {
+        background: var(--very-dark-desaturated-blue-screen-background);
+    }
+
+    section[class="calc-output"] {
+        color: white;
+    }
+
+    span[class="calc-inputs"] {
+        background: var(--very-dark-desaturated-toggle-background);
+    }
+
+    button {
+        background: var(--light-grayish-orange-key-background);
+        box-shadow: 0px 3px var(--grayish-orange-key-shadow);
+        color: var(--very-dark-grayish-blue);
+    }
+
+    button[class="d"],
+    button[class="r"] {
+        background: var(--desaturated-dark-blue-key-background);
+        color: var(--white);
+        box-shadow: 0px 3px var(--desaturated-dark-blue-key-shadow);
+    }
+
+    button[class="="] {
+        background: var(--red-key-background-toggle);
+        box-shadow: 0px 3px var(--dark-red-key-shadow);
+        color: white;
+    }
+
+    button:hover {
+        filter: contrast(2);
+    }
+
+    button[class="d"]:hover,
+    button[class="r"]:hover {
+        filter: brightness(2);
+    }
+
+    input[name="theme"]:checked {
+        background: var(--red-key-background-toggle);
+    }
+}
+
+body:has(input[id="theme-2"]:checked) {
+    main {
+        color: var(--very-dark-grayish-yellow);
+        background: var(--light-gray-main-background);
+    }
+
+    section[class="calc-output"] {
+        color: var(--very-dark-grayish-yellow);
+        background: var(--very-light-gray-screen-background);
+    }
+
+    span[class="calc-inputs"] {
+        background: var(--grayish-red-toggle-background-keypad-background);
+    }
+
+    button {
+        background: var(--light-grayish-orange-key-background);
+        box-shadow: 0px 3px var(--grayish-orange-key-shadow);
+        color: var(--very-dark-grayish-yellow);
+    }
+
+    button[class="d"],
+    button[class="r"] {
+        background: var(--dark-moderate-cyan-key-background);
+        box-shadow: 0px 3px var(--very-dark-cyan-key-shadow);
+        color: white;
+    }
+
+    button[class="="] {
+        background: var(--orange-key-background-toggle);
+        box-shadow: 0px 3px var(--dark-orange-key-shadow);
+        color: white;
+    }
+
+    button:hover {
+        filter: contrast(2);
+    }
+
+    button[class="d"]:hover,
+    button[class="r"]:hover {
+        filter: brightness(1.2);
+    }
+
+    input[name="theme"]:checked {
+        background: var(--orange-key-background-toggle);
+    }
+
+}
+
+body:has(input[id="theme-3"]:checked) {
+    main {
+        background: var(--very-dark-violet-main-background);
+        color: yellow;
+    }
+
+    section[class="calc-output"] {
+        background: var(--very-dark-violet-toggle-background-keypad-screen);
+    }
+
+    span[class="calc-inputs"] {
+        background: var(--very-dark-violet-toggle-background-keypad-screen);
+    }
+
+    button {
+        background: var(--very-dark-violet-key-background);
+        box-shadow: 0px 3px var(--dark-magenta-key-shadow);
+        color: var(--light-yellow);
+    }
+
+    button[class="d"],
+    button[class="r"] {
+        color: white;
+        background: var(--dark-violet-key-background);
+        box-shadow: 0px 3px var(--vivid-magenta-key-shadow);
+    }
+
+    button[class="="] {
+        background: var(--pure-cyan-key-background-toggle);
+        box-shadow: 0px 3px var(--soft-cyan-key-shadow);
+        color: black;
+    }
+
+    button:hover {
+        filter: contrast(2);
+        filter: brightness(1.5);
+    }
+
+    button[class="d"]:hover,
+    button[class="r"]:hover {
+        filter: brightness(2);
+    }
+
+    input[name="theme"]:checked {
+        background: var(--pure-cyan-key-background-toggle);
+    }
+
+}
+
+@container main (inline-size < 800px) {
+    button {
+        height: 2.2em;
+        width: 2.2em;
+        font-size: 2em;
+        font-weight: 900;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 0;
+    }
+
+    section[class="calculator-card"] {
+        width: 90cqw;
+        height: auto;
+    }
+
+    section[class="calc-output"] {
+        padding: unset;
+    }
+
+    span[class="calculator-card-header"] {
+        padding: unset;
+    }
+}
