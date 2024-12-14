@@ -72,6 +72,8 @@ main {
     display: grid;
     place-items: center;
     container: main / inline-size;
+    padding-bottom: 50px;
+    margin-top: -25px;
 }
 
 section[class="calculator-card"] {
@@ -114,6 +116,7 @@ span[class="calc-inputs"] {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 100%;
+    width: 100%;
     column-gap: 10px;
     row-gap: 10px;
     padding: 5%;
@@ -137,7 +140,12 @@ span[class="theme"] {
     grid-template-columns: repeat(4, 1fr);
     width: min-content;
 }
-
+div[class="attribution"]{
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    right: 0px;
+}
 label[for="theme-1"],
 label[for="theme-2"],
 label[for="theme-3"] {
@@ -343,5 +351,16 @@ body:has(input[id="theme-3"]:checked) {
 
     span[class="calculator-card-header"] {
         padding: unset;
+    }
+
+    span[class="calc-inputs"] {
+        width: auto;
+        column-gap: 5px;
+        row-gap: 5px;
+    }
+
+    button {
+        height: 70px;
+        width: 70px;
     }
 }
